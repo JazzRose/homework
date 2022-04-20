@@ -30,7 +30,7 @@ def add_book():
     book_repository.save(book_object)
     return redirect('/books')
 
-@books_blueprint.route('/book/<id>', methods = ['GET'])
+@books_blueprint.route('/books/<id>', methods = ['GET'])
 def show_book(id):
     book = book_repository.select(id)
     return render_template('books/show.html',book=book) #first task is referencing show.html e.g task.description
