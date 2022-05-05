@@ -26,7 +26,7 @@ Park.prototype.dinosaurBySpecies = function(chosenSpecies){
     let allOfSpecies= []
 
     for (const dinosaur of this.dinosaurs){
-        if(dinosaur.species == chosenSpecies){
+        if(dinosaur.species === chosenSpecies){
             allOfSpecies.push(dinosaur)}}
 
     return allOfSpecies;
@@ -45,8 +45,8 @@ Park.prototype.totalVisitorsPerYear = function(){
     return this.totalVisitorsPerDay() * 365
 }
 
-Park.prototype.totalRevenuePerYear = function(park){
-    let revenue = this.totalVisitorsPerYear() * park.ticketPrice
+Park.prototype.totalRevenuePerYear = function(){
+    let revenue = this.totalVisitorsPerYear() * this.park.ticketPrice
     return revenue
 }
 module.exports = Park

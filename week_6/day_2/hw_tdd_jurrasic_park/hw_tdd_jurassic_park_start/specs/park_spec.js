@@ -3,8 +3,13 @@ const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
 
 describe('Park', function() {
+
     let park;
-    let dinosaur;
+    let dinosaur1;
+    let dinosaur2;
+    let dinosaur3;
+    let dinosaur4;
+
   beforeEach(function () {
     dinosaur1 = new Dinosaur ('triceratops','herbivore',300)
     dinosaur2 = new Dinosaur ('diplodocus','herbivore',250)
@@ -50,7 +55,7 @@ describe('Park', function() {
     park.addDinosaur(dinosaur3)
     park.addDinosaur(dinosaur4)
     const actual = park.dinosaurBySpecies('velociraptor')
-    assert.strictEqual(actual,[dinosaur3,dinosaur4])
+    assert.deepStrictEqual(actual,[dinosaur3,dinosaur4])
   });
 
   it('should be able to calculate the total number of visitors per day', function(){
@@ -67,7 +72,7 @@ describe('Park', function() {
 
   it('should be able to calculate total revenue for one year', function(){;
     park.addDinosaur(dinosaur3)
-    const actual = park.totalRevenuePerYear(this.park)
+    const actual = park.totalRevenuePerYear()
     assert.strictEqual(actual,13687500)
   });
 
