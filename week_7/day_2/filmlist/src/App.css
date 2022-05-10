@@ -1,0 +1,41 @@
+#releases{
+  background-color: rgba(216, 240, 255, 0.84);
+  text-align: center;
+  border: solid black 1px;
+  padding: 20px;
+
+
+}
+a:link {
+  text-decoration: none;
+  color:rgba(71, 158, 211, 0.84)
+}
+
+a:visited {
+  text-decoration: none;
+  color:rgba(71, 158, 211, 0.84)
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.ReleaseDiv {
+  text-align: center;
+  padding:20px
+}
+.FilmList{
+  text-align: center;
+  padding:20px
+
+}
+
+li {
+  background-color: rgba(216, 240, 255, 0.84);
+  text-align: center;
+  border: solid black 1px;
+  padding: 10px;
+  list-style: none;
+
+}
+
