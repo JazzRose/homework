@@ -9,9 +9,9 @@ const SongList = ({songs}) => {
 
     return (
 
-        <ul>
+        <ol>
            {songsItems} 
-        </ul>
+        </ol>
     )
 }
 
