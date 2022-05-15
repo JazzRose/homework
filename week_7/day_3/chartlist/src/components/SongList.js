@@ -4,14 +4,14 @@ import SongItem from './ListItem'
 const SongList = ({songs}) => {
 
     const songsItems = songs.map((song,index) => {
-        return <SongItem song = {song} key = {index}/>
+        return <SongItem song = {song} index = {index}/>
     })
 
     return (
 
-        <ol>
+        <ul>
            {songsItems} 
-        </ol>
+        </ul>
     )
 }
 
