@@ -5,6 +5,16 @@ h2 {
   width:200
 }
 
+h1{
+
+  color: rgb(3, 80, 31);
+}
+
+p{
+
+ color: black; 
+ font-size: 18px;
+}
 input {
   height:40px;
   width:200px;

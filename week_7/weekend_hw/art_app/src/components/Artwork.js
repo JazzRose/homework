@@ -16,9 +16,8 @@ const Artwork = ({artwork, onLovedClick}) => {
                     </div>
                     <div class="flip-card-back">
                         <h2>{artwork.data.author}</h2>
-                        <p>{artwork.data.title}</p>
-                        <p>{artwork.data.content_categories}</p>
-                        <p>Awards:{artwork.data.total_awards_received} <img src = "https://www.redditstatic.com/desktop2x/img/gold/badges/award-gold-large.png" height = "30px" width = "30px"/></p> 
+                        <h1>{artwork.data.title}</h1>
+                        <p><img src = "https://www.redditstatic.com/desktop2x/img/gold/badges/award-gold-large.png" height = "30px" width = "30px"/>: {artwork.data.total_awards_received} </p> 
                     </div>
                 </div>
             </div>
