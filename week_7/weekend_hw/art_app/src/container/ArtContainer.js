@@ -10,10 +10,16 @@ const ArtContainer = () => {
     const[lovedArtworks, setLovedArtworks] = useState([])
     const[awardedArtworks,setAwardedArtworks] =useState([])
     const[searchTerm,setSearchTerm] = useState("")
+    const[showIfAwarded,setshowIfAwarded] = useState(false)
+    
 
     useEffect(() => {
         getArtworks();
       }, [])
+
+      useEffect(() => {
+        filterArts()
+      },[showIfAwarded])
 
     const onLovedClick = (lovedArtwork) => {
 
@@ -30,17 +36,32 @@ const ArtContainer = () => {
     setLovedArtworks(copyList)
 
     }
-
-    const onAwardedClick = (awardedArtwork) => {
-        const list = [...awardedArtworks]
-        const awarded = artworks.filter((artwork) =>{
-             return artwork.data.total_awards_received > 0
-    })
-        if (awarded) {
-            list.push(awardedArtwork)}
-
-        setAwardedArtworks(list)
+    const onAwardedClick = () => {
+        setshowIfAwarded(!showIfAwarded)
         }
+    
+
+    // const onAwardedClick = (awardedArtwork) => {
+    //     const list = [...awardedArtworks]
+    //     const awarded = artworks.filter((artwork) =>{
+    //          return artwork.data.total_awards_received > 0
+    // })
+    //     if (awarded) {
+    //         list.push(awardedArtwork)}
+
+    //     setAwardedArtworks(list)
+    //     }
+
+
+    const filterArts =  () => {
+        
+        if (showIfAwarded){
+        const artsToBeDisplayed = artworks.filter((artwork) =>{
+            return artwork.data.total_awards_received > 0
+        })
+        setArtworks(artsToBeDisplayed)
+         }
+    }
     
     const getArtworks = function(){
         fetch ('https://www.reddit.com/r/art.json')
